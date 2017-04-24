@@ -1,0 +1,9 @@
+#!/bin/bash
+
+java=$(ls | grep '.java$')
+for f in ${java}
+do
+echo -n "$f has "
+echo -n $(cat $f | wc -l)
+echo " lines of code."
+done

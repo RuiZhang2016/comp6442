@@ -1,0 +1,19 @@
+#!/bin/bash
+
+people=(Eric Alistair Patrick)
+greeting=(Hello Greetings G\'Day)
+index=0
+
+if [ ${1} == "log" ] ; then
+	cat ./greeting.log
+else
+
+while [ ${index} -lt 3 ] ; do
+if [ ${people[${index}]} == ${1} ] ; then
+	echo "${greeting[${index}]} ${people[${index}]}"
+	echo "${greeting[${index}]} ${people[${index}]}" >> greeting.log
+fi
+index=$[${index} + 1]
+done
+
+fi

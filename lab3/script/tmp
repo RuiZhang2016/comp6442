@@ -1,0 +1,16 @@
+#!/bin/bash
+
+f='names_greetings'
+if [ ${1} == "log" ] ; then
+	cat greeting.log
+else
+
+while read -r p;
+do
+name=$(echo $p | cut -d " " -f1)
+greeting=$(echo $p | cut -d " " -f2)
+	if [ "${name}" == "${1}" ]; then
+	echo "$greeting ${name}"
+	echo "$greeting $name" >> greeting.log
+	fi
+done << $f
